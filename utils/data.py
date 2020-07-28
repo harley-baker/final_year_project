@@ -4,6 +4,8 @@ from datetime import datetime, timezone
 
 DATE_FORMAT = '%a %b %d %H:%M:%S %z %Y'
 
+
+# WARNING: This takes FOREVER to run
 def generate_data_files():
     parse('datasets/verified-2019/verified-2019.tsv', 'datasets/verified-2019/verified-2019_tweets.json',
                          'humans.csv')
@@ -12,10 +14,10 @@ def generate_data_files():
                          'humans.csv')
     parse('datasets/creci-rtbust-2019/cresci-rtbust-2019.tsv',
                          'datasets/creci-rtbust-2019/cresci-rtbust-2019_tweets.json',
-                         'dataset.csv')
+                         'bots_and_humans.csv')
     parse('datasets/midterm-2018/midterm-2018.tsv',
                          'datasets/midterm-2018/midterm-2018_processed_user_objects.json',
-                         'dataset.csv')
+                         'bots_and_humans.csv')
     parse('datasets/political-bots-2019/political-bots-2019.tsv',
                          'datasets/political-bots-2019/political-bots-2019_tweets.json',
                          'bots.csv')

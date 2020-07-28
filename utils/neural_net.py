@@ -11,7 +11,7 @@ physical_devices = tf.config.list_physical_devices('GPU')
 tf.config.experimental.set_memory_growth(physical_devices[0], True)
 
 
-def train_model(data_file):
+def train_model(data_file, output_file):
     df = read_csv(data_file)
     x, y = df.values[:, 1:-1], df.values[:, -1]
     x = x.astype('float32')
@@ -27,7 +27,7 @@ def train_model(data_file):
     model.fit(x_train, y_train, epochs=150, batch_size=32, verbose=0)
     loss, acc = model.evaluate(x_test, y_test, verbose=0)
     print('Test Accuracy: %.3f' % acc)
-    model.save('model.h5')
+    model.save(output_file)
 
 
 def model_predict(model_file, account_data):
