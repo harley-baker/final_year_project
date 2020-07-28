@@ -1,4 +1,4 @@
-from pandas import read_csv
+from pandas import read_csv, DataFrame
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from tensorflow.keras import Sequential
@@ -32,4 +32,5 @@ def train_model(data_file, output_file):
 
 def model_predict(model_file, account_data):
     model = load_model(model_file)
-    model.predict(account_data)
+    row = [float(i) for i in account_data]
+    return model.predict([row])[0][0]
