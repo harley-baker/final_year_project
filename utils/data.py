@@ -4,6 +4,24 @@ from datetime import datetime, timezone
 
 DATE_FORMAT = '%a %b %d %H:%M:%S %z %Y'
 
+def generate_data_files():
+    parse('datasets/verified-2019/verified-2019.tsv', 'datasets/verified-2019/verified-2019_tweets.json',
+                         'humans.csv')
+    parse('datasets/celebrity-2019/celebrity-2019.tsv',
+                         'datasets/celebrity-2019/celebrity-2019_tweets.json',
+                         'humans.csv')
+    parse('datasets/creci-rtbust-2019/cresci-rtbust-2019.tsv',
+                         'datasets/creci-rtbust-2019/cresci-rtbust-2019_tweets.json',
+                         'dataset.csv')
+    parse('datasets/midterm-2018/midterm-2018.tsv',
+                         'datasets/midterm-2018/midterm-2018_processed_user_objects.json',
+                         'dataset.csv')
+    parse('datasets/political-bots-2019/political-bots-2019.tsv',
+                         'datasets/political-bots-2019/political-bots-2019_tweets.json',
+                         'bots.csv')
+    parse('datasets/pronbots-2019/pronbots-2019.tsv', 'datasets/pronbots-2019/pronbots-2019_tweets.json',
+                         'bots.csv')
+
 
 def parse(input_tsv, input_json, output_file):
     print('Starting %s' % input_tsv)

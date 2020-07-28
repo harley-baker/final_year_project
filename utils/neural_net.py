@@ -1,4 +1,3 @@
-from utils import create_dataset
 from pandas import read_csv
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
@@ -7,31 +6,9 @@ from tensorflow.keras.layers import Dense
 from tensorflow.keras.models import load_model
 import tensorflow as tf
 
+# Have to set these for TF to work on my hardware
 physical_devices = tf.config.list_physical_devices('GPU')
 tf.config.experimental.set_memory_growth(physical_devices[0], True)
-
-
-def generate_data_files():
-    create_dataset.parse('datasets/verified-2019/verified-2019.tsv', 'datasets/verified-2019/verified-2019_tweets.json',
-                         'humans.csv')
-    create_dataset.parse('datasets/celebrity-2019/celebrity-2019.tsv',
-                         'datasets/celebrity-2019/celebrity-2019_tweets.json',
-                         'humans.csv')
-    create_dataset.parse('datasets/creci-rtbust-2019/cresci-rtbust-2019.tsv',
-                         'datasets/creci-rtbust-2019/cresci-rtbust-2019_tweets.json',
-                         'dataset.csv')
-    create_dataset.parse('datasets/midterm-2018/midterm-2018.tsv',
-                         'datasets/midterm-2018/midterm-2018_processed_user_objects.json',
-                         'dataset.csv')
-    create_dataset.parse('datasets/political-bots-2019/political-bots-2019.tsv',
-                         'datasets/political-bots-2019/political-bots-2019_tweets.json',
-                         'bots.csv')
-    create_dataset.parse('datasets/pronbots-2019/pronbots-2019.tsv', 'datasets/pronbots-2019/pronbots-2019_tweets.json',
-                         'bots.csv')
-
-
-def main():
-    pass
 
 
 def train_model(data_file):
@@ -55,8 +32,4 @@ def train_model(data_file):
 
 def model_predict(model_file, account_data):
     model = load_model(model_file)
-
-
-
-if __name__ == '__main__':
-    main()
+    model.predict(account_data)

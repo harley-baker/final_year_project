@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detect-a-bot</title>
+</head>
+<body>
+    <h1>Detect-a-bot</h1>
+    <form action="{% url 'index:analyse' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="accountURL" id="accountURL" placeholder="Twitter Account URL">
+        <input type="submit" value="Analyse">
+    </form>
+</body>
+</html>
