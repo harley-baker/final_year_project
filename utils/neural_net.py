@@ -12,12 +12,12 @@ physical_devices = tf.config.list_physical_devices('GPU')
 tf.config.experimental.set_memory_growth(physical_devices[0], True)
 
 
-def train_model(data_file, output_file, epochs):
+def train_model(data_file, output_file, epochs=250, test_size=0.33, validation_split=0.33, early_stop_flag=True):
     df = read_csv(data_file)
     x, y = df.values[:, 1:-1], df.values[:, -1]
     x = x.astype('float32')
     y = LabelEncoder().fit_transform(y)
-    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.33)
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=test_size)
     print(x_train.shape, x_test.shape, y_train.shape, y_test.shape)
     n_features = x_train.shape[1]
     model = Sequential()
@@ -30,8 +30,9 @@ def train_model(data_file, output_file, epochs):
     model.add(Dense(5, activation='relu', kernel_initializer='he_normal'))
     model.add(Dense(1, activation='sigmoid'))
     model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
-    early_stop = EarlyStopping(monitor='val_loss', patience=epochs/20.00)
-    model.fit(x_train, y_train, epochs=epochs, batch_size=32, verbose=2, validation_split=0.33, callbacks=[early_stop])
+    early_stop = EarlyStopping(monitor='val_loss', patience=epochs/20.00) if early_stop_flag else None
+    model.fit(x_train, y_train, epochs=epochs, batch_size=32, verbose=2, validation_split=validation_split,
+              callbacks=[early_stop])
     loss, acc = model.evaluate(x_test, y_test, verbose=2)
     print('Test Accuracy: %.3f' % acc)
     model.save(output_file)
