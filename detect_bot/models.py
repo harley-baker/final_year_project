@@ -1,17 +1,18 @@
 from django.db import models
 from django.utils import timezone
+from datetime import datetime
 
 
 class TwitterUser(models.Model):
-    account_id = models.CharField(max_length=200)
+    account_id = models.CharField(max_length=200, primary_key=True, unique=True)
     creation_date = models.DateTimeField()
     statuses_count = models.IntegerField()
-    followers_count = models.IntegerField()
+    follower_count = models.IntegerField()
     friends_count = models.IntegerField()
     favourites_count = models.IntegerField()
     listed_count = models.IntegerField()
     default_profile = models.BooleanField()
-    profile_use_default_background_image = models.BooleanField()
+    profile_use_background_image = models.BooleanField()
     verified = models.BooleanField()
     screen_name = models.CharField(max_length=50)
     name = models.CharField(max_length=15)
@@ -27,7 +28,7 @@ class TwitterUser(models.Model):
         return self.statuses_count / self.account_age().seconds
 
     def follower_growth_rate(self):
-        return self.followers_count / self.account_age().seconds
+        return self.follower_count / self.account_age().seconds
 
     def friend_growth_rate(self):
         return self.friends_count / self.account_age().seconds
@@ -39,7 +40,7 @@ class TwitterUser(models.Model):
         return self.listed_count / self.account_age().seconds
 
     def followers_friends_ratio(self):
-        return self.followers_count / self.friends_count if self.friends_count > 0 else 0
+        return self.follower_count / self.friends_count if self.friends_count > 0 else 0
 
     def screen_name_length(self):
         return len(self.screen_name)
@@ -55,3 +56,9 @@ class TwitterUser(models.Model):
 
     def description_length(self):
         return len(self.description) if self.description else 0
+
+
+class Search(models.Model):
+    twitter_user = models.ForeignKey(TwitterUser, on_delete=models.CASCADE)
+    classification = models.FloatField()
+    search_time = models.DateTimeField(default=datetime.now())
