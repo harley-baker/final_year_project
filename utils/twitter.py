@@ -1,7 +1,7 @@
 import tweepy
 import json
 
-with open('keys.json') as f:
+with open('utils/keys.json') as f:
     data = json.load(f)
 
 CONSUMER_KEY = data['CONSUMER_KEY']

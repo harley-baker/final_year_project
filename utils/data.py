@@ -3,8 +3,6 @@ import json
 from datetime import datetime, timezone
 from tweepy.models import User
 
-DATE_FORMAT = '%a %b %d %H:%M:%S %z %Y'
-
 
 class dotdict(dict):
     """dot.notation access to dictionary attributes"""
