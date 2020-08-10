@@ -1,13 +1,25 @@
 from django.shortcuts import render
 from utils.twitter import get_user
 from utils.data import data_to_list, parse_json_to_data
-from utils.neural_net import model_predict
+from utils.neural_net import model_predict, get_prediction
 from .models import TwitterUser, Search
+from .UserSearchInfo import UserSearchInfo
 import datetime
 
 
 def index(request):
-    context = {}
+    searches = Search.objects.all()
+    leaderboard = {}
+    for search in searches:
+        if search.twitter_user.account_id in leaderboard:
+            leaderboard[search.twitter_user.account_id].increment_count()
+            leaderboard[search.twitter_user.account_id].prediction = get_prediction(search.classification)
+        else:
+            leaderboard[search.twitter_user.account_id] = UserSearchInfo(search.twitter_user, 1,
+                                                                         get_prediction(search.classification))
+    leaderboard = list(leaderboard.values())
+    leaderboard.sort(reverse=True, key=lambda i: i.count)
+    context = {'leaderboard': leaderboard[:10]}
     return render(request, 'index.html', context)
 
 
@@ -24,13 +36,9 @@ def analyse(request):
         user_record.save()
     user_data_row = data_to_list(parsed_user, user.id, '')[1:-1]
     classification = model_predict('models/drop_off_early_stop.h5', user_data_row)
-    if classification > 0.6:
-        prediction = 'Human'
-    elif 0.6 >= classification >= 0.40:
-        prediction = 'Can\'t work out if this user is a bot or not'
-    else:
-        prediction = 'Bot'
-    confidence = (classification - 0.5) * 200 if classification > 0.5 else (0.5 - classification) * 200
+    prediction = get_prediction(classification)
+
+    confidence = abs((classification - 0.5) * 200)
     confidence = round(confidence, 2)
 
     search_record = Search(twitter_user=user_record, classification=classification)

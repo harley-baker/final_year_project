@@ -23,6 +23,14 @@
                 </div>
             </form>
         </div>
+        <table>
+            {% for entry in leaderboard %}
+                <tr>
+                    <td>{{ entry.twitter_user.screen_name }} has been searched {{ entry.count }} times and
+                        is {{ entry.prediction }} </td>
+                </tr>
+            {% endfor %}
+        </table>
     </div>
 </div>
 </body>

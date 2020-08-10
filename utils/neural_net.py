@@ -30,7 +30,7 @@ def train_model(data_file, output_file, epochs=250, test_size=0.33, validation_s
     model.add(Dense(5, activation='relu', kernel_initializer='he_normal'))
     model.add(Dense(1, activation='sigmoid'))
     model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
-    early_stop = EarlyStopping(monitor='val_loss', patience=epochs/20.00) if early_stop_flag else None
+    early_stop = EarlyStopping(monitor='val_loss', patience=epochs / 20.00) if early_stop_flag else None
     model.fit(x_train, y_train, epochs=epochs, batch_size=32, verbose=2, validation_split=validation_split,
               callbacks=[early_stop])
     loss, acc = model.evaluate(x_test, y_test, verbose=2)
@@ -42,3 +42,12 @@ def model_predict(model_file, account_data):
     model = load_model(model_file)
     row = [float(i) for i in account_data]
     return model.predict([row])[0][0]
+
+
+def get_prediction(classification):
+    if classification > 0.6:
+        return 'Human'
+    elif 0.6 >= classification >= 0.40:
+        return 'not able to be classified, maybe the account is too new'
+    else:
+        return 'a Bot'
