@@ -51,7 +51,6 @@ def analyse_user(username):
     except TwitterUser.DoesNotExist as e:
         user_record = create_twitter_user_record(user, parsed_user)
         user_record.save()
-        raise Http404(e)
     user_data_row = data_to_list(parsed_user, user.id, '')[1:-1]
     classification = model_predict('models/no_early.h5', user_data_row)
     prediction = get_prediction(classification)
