@@ -1,9 +1,11 @@
 from django.shortcuts import render
+from django.http import Http404, JsonResponse
 from utils.twitter import get_user
 from utils.data import data_to_list, parse_json_to_data
 from utils.neural_net import model_predict, get_prediction
 from .models import TwitterUser, Search
 from .UserSearchInfo import UserSearchInfo
+from tweepy.error import TweepError
 import datetime
 
 
@@ -24,18 +26,34 @@ def index(request):
 
 
 def analyse(request):
-    user = get_user(request.POST['accountURL'])
+    context = analyse_user(request.POST['username'])
+    return render(request, 'analyse.html', context)
+
+
+def analyse_json(request):
+    result = analyse_user(request.GET['username'])
+    for i, j in result.items():
+        result[i] = str(j)
+    return JsonResponse(result)
+
+
+def analyse_user(username):
+    try:
+        user = get_user(username)
+    except TweepError as e:
+        raise Http404(e.reason)
     parsed_user = parse_json_to_data(user, False)
     try:
         user_record = TwitterUser.objects.get(pk=user.id)
         if (datetime.datetime.now(tz=datetime.timezone.utc) - user_record.last_update).days >= 1:
             user_record = create_twitter_user_record(user, parsed_user)
             user_record.save()
-    except TwitterUser.DoesNotExist:
+    except TwitterUser.DoesNotExist as e:
         user_record = create_twitter_user_record(user, parsed_user)
         user_record.save()
+        raise Http404(e)
     user_data_row = data_to_list(parsed_user, user.id, '')[1:-1]
-    classification = model_predict('models/drop_off_early_stop.h5', user_data_row)
+    classification = model_predict('models/no_early.h5', user_data_row)
     prediction = get_prediction(classification)
 
     confidence = abs((classification - 0.5) * 200)
@@ -44,13 +62,12 @@ def analyse(request):
     search_record = Search(twitter_user=user_record, classification=classification)
     search_record.save()
 
-    context = {
+    return {
         'prediction': prediction,
-        'account_name': user.name,
+        'account_name': user.screen_name,
         'classification': classification,
         'confidence': confidence
     }
-    return render(request, 'analyse.html', context)
 
 
 def create_twitter_user_record(user, parsed_user):

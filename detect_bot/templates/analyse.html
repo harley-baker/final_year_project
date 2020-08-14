@@ -20,8 +20,8 @@
             <form action="{% url 'analyse' %}" method="post">
                 {% csrf_token %}
                 <div class="form-group">
-                    <label for="accountURL">Username</label>
-                    <input type="text" name="accountURL" id="accountURL" class="form-control">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" class="form-control">
                     <input type="submit" value="Analyse" class="btn btn-primary">
                 </div>
             </form>
