@@ -5,6 +5,7 @@ from tensorflow.keras import Sequential
 from tensorflow.keras.layers import Dense, Dropout
 from tensorflow.keras.models import load_model
 from tensorflow.keras.callbacks import EarlyStopping
+from matplotlib import pyplot
 import tensorflow as tf
 
 # Have to set these for TF to work on my hardware

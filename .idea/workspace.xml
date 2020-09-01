@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a0e2ef0-c444-4f21-b4c4-0eb2ed8b0081" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/pre-processor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/no_early.h5" beforeDir="false" afterPath="$PROJECT_DIR$/models/no_early.h5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/neural_net.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/neural_net.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,10 +34,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/detect_bot/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
+            <state relative-caret-position="544">
               <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
@@ -71,11 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/utils/neural_net.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="39" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="195">
+              <caret line="21" column="67" lean-forward="true" selection-start-line="21" selection-start-column="67" selection-end-line="21" selection-end-column="67" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
               </folding>
@@ -91,8 +96,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
+            <state relative-caret-position="221">
+              <caret line="15" column="56" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="56" />
               <folding>
                 <element signature="e#120#130#0" expanded="true" />
               </folding>
@@ -101,10 +106,25 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils/keys.json">
+        <entry file="file://$PROJECT_DIR$/utils/data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+            <state relative-caret-position="476">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pre-processor.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -162,25 +182,28 @@
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/detect_bot/templates/search_bar.html" />
         <option value="$PROJECT_DIR$/detect_bot/templates/global.css" />
-        <option value="$PROJECT_DIR$/train.py" />
         <option value="$PROJECT_DIR$/detect_bot/admin.py" />
         <option value="$PROJECT_DIR$/model_training_api/UserInfo.py" />
         <option value="$PROJECT_DIR$/model_training_api/UserSearchInfo.py" />
         <option value="$PROJECT_DIR$/keys.json" />
-        <option value="$PROJECT_DIR$/utils/data.py" />
         <option value="$PROJECT_DIR$/utils/twitter.py" />
-        <option value="$PROJECT_DIR$/utils/neural_net.py" />
         <option value="$PROJECT_DIR$/detect_bot/urls.py" />
         <option value="$PROJECT_DIR$/detect_bot/templates/analyse.html" />
         <option value="$PROJECT_DIR$/detect_bot/models.py" />
         <option value="$PROJECT_DIR$/detect_bot/templates/index.html" />
         <option value="$PROJECT_DIR$/detect_bot/views.py" />
+        <option value="$PROJECT_DIR$/utils/keys.json" />
+        <option value="$PROJECT_DIR$/utils/pre-processor.py" />
+        <option value="$PROJECT_DIR$/train.py" />
+        <option value="$PROJECT_DIR$/pre-processor.py" />
+        <option value="$PROJECT_DIR$/utils/data.py" />
+        <option value="$PROJECT_DIR$/utils/neural_net.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="300" />
-    <option name="y" value="-8" />
+    <option name="x" value="422" />
+    <option name="y" value="-20" />
     <option name="width" value="1365" />
     <option name="height" value="797" />
   </component>
@@ -192,6 +215,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -202,28 +226,7 @@
             <path>
               <item name="model_training_api" type="b2602c69:ProjectViewProjectNode" />
               <item name="model_training_api" type="462c0819:PsiDirectoryNode" />
-              <item name="detect_bot" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="model_training_api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="model_training_api" type="462c0819:PsiDirectoryNode" />
-              <item name="detect_bot" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="model_training_api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="model_training_api" type="462c0819:PsiDirectoryNode" />
-              <item name="model_training_api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="model_training_api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="model_training_api" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="model_training_api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="model_training_api" type="462c0819:PsiDirectoryNode" />
-              <item name="parsed_datasets" type="462c0819:PsiDirectoryNode" />
+              <item name="datasets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="model_training_api" type="b2602c69:ProjectViewProjectNode" />
@@ -234,7 +237,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -248,15 +250,15 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\H Backup\Uni\Project\account-hydrator" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\H Backup\Uni\Project\model_training_api" />
       <recent name="D:\H Backup\Uni\Project\model_training_api\utils" />
       <recent name="D:\H Backup\Uni\Project\model_training_api\detect_bot" />
       <recent name="D:\H Backup\Uni\Project\model_training_api\detect_bot\static" />
       <recent name="D:\H Backup\Uni\Project\model_training_api\models" />
-      <recent name="D:\H Backup\Uni\Project\model_training_api\parsed_datasets" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\H Backup\Uni\Project\account-hydrator" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -383,22 +385,26 @@
       <workItem from="1597404416239" duration="7281000" />
       <workItem from="1597493978671" duration="599000" />
       <workItem from="1597624715466" duration="58000" />
-      <workItem from="1597658773429" duration="614000" />
+      <workItem from="1597658773429" duration="4755000" />
+      <workItem from="1597681121796" duration="696000" />
+      <workItem from="1597700464142" duration="508000" />
+      <workItem from="1598923612550" duration="256000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124820000" />
+    <option name="totallyTimeSpent" value="130421000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.33742005" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.34861407" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49840087" weight="0.27193934" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49840087" visible="true" weight="0.27193934" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -407,7 +413,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32936078" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50159913" side_tool="true" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49733475" visible="true" weight="0.2936078" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49733475" weight="0.2936078" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.24377032" />
       <window_info active="true" anchor="bottom" id="manage.py@account-hydrator" order="13" weight="0.2892741" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -441,19 +447,19 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/account_hydrator$main.coverage" NAME="main Coverage Results" MODIFIED="1595860002102" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/model_training_api$train.coverage" NAME="train Coverage Results" MODIFIED="1597328256063" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/model_training_api$train.coverage" NAME="train Coverage Results" MODIFIED="1597700568934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/datasets/midterm-2018/midterm-2018.tsv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="csv-text-editor">
         <state relative-caret-position="-104108">
           <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
         </state>
       </provider>
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/datasets/verified-2019/verified-2019_tweets.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -470,13 +476,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/datasets/verified-2019/verified-2019.tsv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
       <provider selected="true" editor-type-id="csv-text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
         </state>
-      </provider>
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/parsed_datasets/bots.csv">
@@ -569,13 +575,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/parsed_datasets/humans.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
       <provider selected="true" editor-type-id="csv-text-editor">
         <state relative-caret-position="476">
           <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
         </state>
-      </provider>
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/detect_bot/admin.py">
@@ -597,13 +603,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/twitterkeys" />
     <entry file="file://$PROJECT_DIR$/datasets/celebrity-2019/celebrity-2019.tsv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
       <provider selected="true" editor-type-id="csv-text-editor">
         <state>
           <caret column="12" lean-forward="true" selection-start-column="12" selection-end-column="12" />
         </state>
-      </provider>
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/twitter.py">
@@ -616,24 +622,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/parsed_datasets/bots_and_humans.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
       <provider selected="true" editor-type-id="csv-text-editor">
         <state>
           <caret column="139" selection-start-column="139" selection-end-column="139" />
         </state>
-      </provider>
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
     </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/third_party/3/six/__init__.pyi">
@@ -681,9 +677,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/utils/keys.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/detect_bot/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
+        <state relative-caret-position="544">
           <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
@@ -715,33 +718,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/neural_net.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/datasets/celebrity-2019/celebrity-2019_tweets.json">
       <provider selected="true" editor-type-id="LargeFileEditor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
+        <state relative-caret-position="221">
+          <caret line="15" column="56" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="56" />
           <folding>
             <element signature="e#120#130#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/keys.json">
+    <entry file="file://$PROJECT_DIR$/utils/data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        <state relative-caret-position="476">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pre-processor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/neural_net.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="21" column="67" lean-forward="true" selection-start-line="21" selection-start-column="67" selection-end-line="21" selection-end-column="67" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -14,21 +14,21 @@ class dotdict(dict):
 # WARNING: This takes FOREVER to run
 def generate_data_files():
     parse('datasets/verified-2019/verified-2019.tsv', 'datasets/verified-2019/verified-2019_tweets.json',
-                         'humans.csv')
+          'bots_and_humans.csv')
     parse('datasets/celebrity-2019/celebrity-2019.tsv',
-                         'datasets/celebrity-2019/celebrity-2019_tweets.json',
-                         'humans.csv')
+          'datasets/celebrity-2019/celebrity-2019_tweets.json',
+          'bots_and_humans.csv')
     parse('datasets/creci-rtbust-2019/cresci-rtbust-2019.tsv',
-                         'datasets/creci-rtbust-2019/cresci-rtbust-2019_tweets.json',
-                         'bots_and_humans.csv')
+          'datasets/creci-rtbust-2019/cresci-rtbust-2019_tweets.json',
+          'bots_and_humans.csv')
     parse('datasets/midterm-2018/midterm-2018.tsv',
-                         'datasets/midterm-2018/midterm-2018_processed_user_objects.json',
-                         'bots_and_humans.csv')
+          'datasets/midterm-2018/midterm-2018_processed_user_objects.json',
+          'bots_and_humans.csv')
     parse('datasets/political-bots-2019/political-bots-2019.tsv',
-                         'datasets/political-bots-2019/political-bots-2019_tweets.json',
-                         'bots.csv')
+          'datasets/political-bots-2019/political-bots-2019_tweets.json',
+          'bots_and_humans.csv')
     parse('datasets/pronbots-2019/pronbots-2019.tsv', 'datasets/pronbots-2019/pronbots-2019_tweets.json',
-                         'bots.csv')
+          'bots_and_humans.csv')
 
 
 def parse(input_tsv, input_json, output_file):
@@ -78,7 +78,6 @@ def data_to_list(data, account_id, account_class):
 
 
 def parse_json_to_data(json_obj, user_exists, account_id=None):
-
     if type(json_obj) is not User:
         json_obj = dotdict(json_obj)
         if user_exists:
@@ -119,7 +118,7 @@ def parse_json_to_data(json_obj, user_exists, account_id=None):
         data['friend_growth_rate'] = data['friends_count'] / user_age.seconds
         data['favourites_growth_rate'] = data['favourites_count'] / user_age.seconds
         data['listed_growth_rate'] = data['favourites_count'] / user_age.seconds
-        data['followers_friends_ratio'] = data['follower_count'] / data['friends_count'] if\
+        data['followers_friends_ratio'] = data['follower_count'] / data['friends_count'] if \
             data['friends_count'] > 0 else 0
         data['screen_name_length'] = len(data['screen_name'])
         data['num_digits_in_screen_name'] = sum(c.isdigit() for c in data['screen_name'])
